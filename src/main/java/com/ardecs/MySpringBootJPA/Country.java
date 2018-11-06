@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  *
  * @author jury
  */
-//@Component
+@Component
 @Entity
     @NamedQuery(name = "findAllProducts", query = "SELECT p FROM Country p")
 public class Country  {

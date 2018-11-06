@@ -18,6 +18,7 @@ public class DAO {
 //    private static final String RECENT_SPITTLES
 //            = "SELECT s FROM Spittle s";
 //    private static final String ALL_SPITTERS
+    
 //            = "SELECT s FROM Spitter s";
 //    private static final String SPITTER_FOR_USERNAME
 //            = "SELECT s FROM Spitter s WHERE s.username = :username";
