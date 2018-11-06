@@ -12,12 +12,24 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!--Scanning components in base-package (look for annotations) -->
     <context:component-scan base-package="com.ardecs"/>
     
+    <!--Настройка фабрики диспетчера сущностей(управляемых контейнером)-->
     <bean id="emf" class=
      "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
-    </bean>
+    </bean>  
     
+    <!--dataSource--> 
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+                  value="com.mysql.jdbc.Driver" />
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/eshop" />
+        <property name="username" value="root" />
+        <property name="password" value="D0CTyn" />
+    </bean> 
+    <!--Выбор поставщика постоянства?-->
     <bean id="jpaVendorAdapter"
           class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="database" value="MYSQL" />
@@ -26,18 +38,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
         <property name="databasePlatform"
                   value="org.hibernate.dialect.MYSQLDialect" />
     </bean>
+    <!--Внедрение менеджера сущностей с помощью Спринг-->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
-
-    <!--Data baze--> 
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.
-       DriverManagerDataSource">
-        <property name="driverClassName"
-                  value="jdbc:mysql://localhost:3306/eshop" />
-        <property name="url"
-                  value="jdbc:hsqldb:hsql://localhost/spitter/spitter" />
-        <property name="username" value="root" />
-        <property name="password" value="123456" />
-    </bean>
+  
 
 </beans>

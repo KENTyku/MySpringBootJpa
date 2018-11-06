@@ -26,16 +26,16 @@ public class DAO {
     @PersistenceContext
     private EntityManager em;                // Для внедрения EntityManager
 
-    public void addProduct(Product product) {
-        em.persist(product);                  // Использование EntityManager
+    public void addCountry(Country country) {
+        em.persist(country);                  // Использование EntityManager
     }
 
-    public Product getProductById(long id) {
-        return em.find(Product.class, id);       // Использование EntityManager
+    public Country getCountryById(int id) {
+        return em.find(Country.class, id);       // Использование EntityManager
     }
 
-    public void saveProduct(Product product) {
-        em.merge(product);                    // Использование EntityManager
+    public void saveCountry(Country country) {
+        em.merge(country);                    // Использование EntityManager
     }
 
 }
