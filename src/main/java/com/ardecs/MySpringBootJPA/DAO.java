@@ -24,7 +24,7 @@ public class DAO {
 //            = "SELECT s FROM Spitter s WHERE s.username = :username";
 //    private static final String SPITTLES_BY_USERNAME
 //            = "SELECT s FROM Spittle s WHERE s.spitter.username = :username";
-    @PersistenceContext
+//    @PersistenceContext
     private EntityManager em;                // Для внедрения EntityManager
 
     public void addCountry(Country country) {

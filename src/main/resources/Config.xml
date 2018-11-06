@@ -11,7 +11,10 @@ and open the template in the editor.
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
     <!--Scanning components in base-package (look for annotations) -->
-    <context:component-scan base-package="com.ardecs"/>
+    <!--<context:component-scan base-package="com.ardecs"/>-->
+
+    <!--Внедрение менеджера сущностей с помощью Спринг-->
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
     
     <!--Настройка фабрики диспетчера сущностей(управляемых контейнером)-->
     <bean id="emf" class=
@@ -39,8 +42,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
         <property name="databasePlatform"
                   value="org.hibernate.dialect.MySQL57Dialect" />
     </bean>
-    <!--Внедрение менеджера сущностей с помощью Спринг-->
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
 
   
 
