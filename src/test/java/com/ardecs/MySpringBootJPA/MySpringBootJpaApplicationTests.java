@@ -6,18 +6,17 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+//@SpringBootTest
 public class MySpringBootJpaApplicationTests {
 
-	@Test
-	public void contextLoads() {
-            Country country = new Country("Russia");
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com."
-                + "ardecs_MySpringBootJPA_jar_0.0.1-SNAPSHOTPU");
+    @Test
+    public void contextLoads() {
+        Country country = new Country("Russia");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myJPA");
         EntityManager em = emf.createEntityManager();
 // Обеспечивает постоянство Country в базе данных
         EntityTransaction tx = em.getTransaction();
@@ -27,6 +26,6 @@ public class MySpringBootJpaApplicationTests {
 // Закрывает EntityManager и EntityManagerFactory
         em.close();
         emf.close();
-	}
+    }
 
 }
