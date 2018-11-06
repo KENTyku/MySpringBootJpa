@@ -65,6 +65,21 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.3.1.Final</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-entitymanager</artifactId>-->
+            <!--<version>5.2.3.Final</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+            <!--&lt;!&ndash;<groupId>org.hibernate</groupId>&ndash;&gt;-->
+            <!--&lt;!&ndash;<artifactId>hibernate-core</artifactId>&ndash;&gt;-->
+            <!--&lt;!&ndash;<version>4.1.4.Final</version>&ndash;&gt;-->
+        <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>5.3.7.Final</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>

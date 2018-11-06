@@ -15,12 +15,16 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <!--Внедрение менеджера сущностей с помощью Спринг-->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
-    
+
+    <!--преобразования специализированных исключений в универсальные исключения Spring-->
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+
     <!--Настройка фабрики диспетчера сущностей(управляемых контейнером)-->
     <bean id="emf" class=
      "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+        <!--<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />-->
     </bean>  
     
     <!--dataSource--> 
