@@ -7,6 +7,8 @@ import javax.persistence.Persistence;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 //import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -16,7 +18,10 @@ public class MySpringBootJpaApplicationTests {
     @Test
     public void contextLoads() {
         Country country = new Country("Russia");
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myJPA");
+        ApplicationContext context=new ClassPathXmlApplicationContext("Config.xml");
+
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myJPA");
+        EntityManagerFactory emf = (EntityManagerFactory) context.getBean("emf");
         EntityManager em = emf.createEntityManager();
 // Обеспечивает постоянство Country в базе данных
         EntityTransaction tx = em.getTransaction();

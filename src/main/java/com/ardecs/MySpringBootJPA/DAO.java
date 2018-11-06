@@ -32,10 +32,12 @@ public class DAO {
     }
 
     public Country getCountryById(int id) {
+
         return em.find(Country.class, id);       // Использование EntityManager
     }
 
     public void saveCountry(Country country) {
+
         em.merge(country);                    // Использование EntityManager
     }
 
