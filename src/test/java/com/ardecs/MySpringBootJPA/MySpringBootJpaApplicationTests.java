@@ -17,7 +17,7 @@ public class MySpringBootJpaApplicationTests {
 
     @Test
     public void contextLoads() {
-        Country country = new Country("Russia");
+        Country country = new Country("York");
         ApplicationContext context=new ClassPathXmlApplicationContext("Config.xml");
 
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myJPA");
