@@ -61,4 +61,9 @@ public class Country  {
     public void setCountryName(String country_name) {
         this.countryName = country_name;
     }
+    @Override
+    public String toString(){
+
+        return id+" "+countryName;
+    }
 }

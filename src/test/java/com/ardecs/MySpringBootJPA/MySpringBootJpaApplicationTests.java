@@ -13,15 +13,19 @@ public class MySpringBootJpaApplicationTests {
     @Test
     public void contextLoads() {
         Country country = new Country("York");
-        ApplicationContext context=new ClassPathXmlApplicationContext("Config.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("META-INF/Config.xml");
 
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("myJPA");
-        EntityManagerFactory emf = (EntityManagerFactory) context.getBean("emf");
+        EntityManagerFactory emf = (EntityManagerFactory) context.getBean("entityManagerFactory");
         EntityManager em = emf.createEntityManager();
 // Обеспечивает постоянство Country в базе данных
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         em.persist(country);
+        tx.commit();
+
+        tx.begin();
+        System.out.println(em.find(Country.class,23).toString());
         tx.commit();
 // Закрывает EntityManager и EntityManagerFactory
         em.close();

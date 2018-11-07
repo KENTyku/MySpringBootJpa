@@ -18,8 +18,14 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!--преобразования специализированных исключений в универсальные исключения Spring.-->
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
+    <!--<jpa:repositories base-package="com.ardecs.MySpringBootJPA" transaction-manager-ref="txManager"/>-->
+
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
     <!--Настройка фабрики диспетчера сущностей(управляемых контейнером)-->
-    <bean id="emf" class=
+    <bean id="entityManagerFactory" class=
             "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
@@ -44,6 +50,4 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
         <property name="databasePlatform"
                   value="org.hibernate.dialect.MySQL57Dialect"/>
     </bean>
-
-
 </beans>
