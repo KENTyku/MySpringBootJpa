@@ -6,11 +6,13 @@ and open the template in the editor.
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--Scanning components in base-package (look for annotations) -->
-    <!--<context:component-scan base-package="com.ardecs.MySpringBootJPA"/>-->
+    <context:component-scan base-package="com.ardecs.MySpringBootJPA"/>
 
     <!--Внедрение менеджера сущностей с помощью Спринг-->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
@@ -18,7 +20,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!--преобразования специализированных исключений в универсальные исключения Spring.-->
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
-    <!--<jpa:repositories base-package="com.ardecs.MySpringBootJPA" transaction-manager-ref="txManager"/>-->
+    <jpa:repositories base-package="com.ardecs.MySpringBootJPA" transaction-manager-ref="txManager"/>
 
     <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>

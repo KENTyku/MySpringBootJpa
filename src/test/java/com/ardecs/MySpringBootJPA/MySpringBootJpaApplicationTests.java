@@ -4,11 +4,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class MySpringBootJpaApplicationTests {
+    @Autowired
+    private DAO dao;
 
     @Test
     public void contextLoads() {
@@ -27,6 +30,11 @@ public class MySpringBootJpaApplicationTests {
         tx.begin();
         System.out.println(em.find(Country.class,23).toString());
         tx.commit();
+        tx.begin();
+        System.out.println(dao.findById((long) 24).toString());
+        tx.commit();
+
+
 // Закрывает EntityManager и EntityManagerFactory
         em.close();
         emf.close();
