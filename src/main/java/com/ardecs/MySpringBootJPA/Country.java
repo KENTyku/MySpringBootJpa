@@ -10,13 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotNull;
-import org.springframework.stereotype.Component;
+
 
 /**
  *
  * @author jury
  */
-@Component
+
 @Entity
     @NamedQuery(name = "findAllProducts", query = "SELECT p FROM Country p")
 public class Country  {
