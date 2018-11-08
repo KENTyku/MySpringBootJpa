@@ -25,7 +25,7 @@ public class Country  {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     @NotNull
     private String countryName;
 
@@ -39,14 +39,14 @@ public class Country  {
     /**
      * @return the id
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

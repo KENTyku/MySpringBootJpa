@@ -23,11 +23,13 @@ public class MySpringBootJpaApplicationTests {
         }
         Country country1 = new Country("123");
         countryRepository.save(country1);
-        Country country2=countryRepository.findById(72);
+        Country country2=countryRepository.findById(Long.valueOf(76)).get();
         country2.setCountryName("Test");
         countryRepository.save(country2);
-//        countryRepository.delete(country4);
+        countryRepository.delete(country1);
         System.out.println("TEST "+country2.toString());
+        countryRepository.deleteById(Long.valueOf(75));
+
     }
 
 }
