@@ -5,6 +5,8 @@ package com.ardecs.MySpringBootJPA;/*
  */
 
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,7 +18,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author jury
  */
-
+@Component
 @Entity
     @NamedQuery(name = "findAllProducts", query = "SELECT p FROM Country p")
 public class Country  {
