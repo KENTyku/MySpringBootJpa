@@ -7,10 +7,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:META-INF/Config.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)//специальный класс JUnit,требуется для поддержки контекста в JUnit
+@ContextConfiguration(locations = {"classpath:META-INF/Config.xml"})//указываем конфиг для работы автокофигурации контекста в тесте
 public class MySpringBootJpaApplicationTests {
     @Autowired
     private CountryRepository countryRepository;
@@ -22,15 +21,13 @@ public class MySpringBootJpaApplicationTests {
         for (Country country : countries) {
             System.out.println(country.toString());
         }
-        Country country4 = new Country("123");
-        countryRepository.save(country4);
+        Country country1 = new Country("123");
+        countryRepository.save(country1);
         Country country2=countryRepository.findById(72);
         country2.setCountryName("Test");
         countryRepository.save(country2);
 //        countryRepository.delete(country4);
         System.out.println("TEST "+country2.toString());
-
-//
     }
 
 }
