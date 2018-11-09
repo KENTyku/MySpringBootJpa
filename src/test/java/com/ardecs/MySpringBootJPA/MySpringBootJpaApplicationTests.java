@@ -14,6 +14,7 @@ public class MySpringBootJpaApplicationTests {
     @Autowired
     private CountryRepository countryRepository;
 
+
     @Test
     public void testCrud() {
 
@@ -28,7 +29,7 @@ public class MySpringBootJpaApplicationTests {
         countryRepository.save(country2);
         countryRepository.delete(country1);
         System.out.println("TEST "+country2.toString());
-        countryRepository.deleteById(Long.valueOf(75));
+//        countryRepository.deleteById(Long.valueOf(75));
 
     }
 
