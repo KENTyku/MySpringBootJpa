@@ -36,32 +36,31 @@ and open the template in the editor.
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean id="countryRepository2" class="com.ardecs.MySpringBootJPA.CountryRepository" abstract="true"/>
+    <!--<bean id="repository" class="com.ardecs.MySpringBootJPA.CountryRepository" abstract="true"/>-->
 
     <!--Настройка фабрики диспетчера сущностей(управляемых контейнером)-->
     <bean id="entityManagerFactory" class=
             "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+        <!--<property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>-->
+        <property name="persistenceUnitName" value="TestingMySQLBase"/>
     </bean>
 
     <!--dataSource-->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName"
-                  value="com.mysql.jdbc.Driver"/>
-        <property name="url"
-                  value="jdbc:mysql://localhost:3306/eShop?zeroDateTimeBehavior=convertToNull"/>
+        <property name="driverClassName"    value="com.mysql.jdbc.Driver"/>
+        <property name="url"   value="jdbc:mysql://localhost:3306/ishop?zeroDateTimeBehavior=convertToNull"/>
         <property name="username" value="root"/>
         <property name="password" value="D0CTyn"/>
     </bean>
-    <!--Выбор поставщика постоянства-->
-    <bean id="jpaVendorAdapter"
-          class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-        <property name="database" value="MYSQL"/>
-        <property name="showSql" value="true"/>
-        <property name="generateDdl" value="false"/>
-        <property name="databasePlatform"
-                  value="org.hibernate.dialect.MySQL57Dialect"/>
-    </bean>
+    <!--&lt;!&ndash;Выбор поставщика постоянства&ndash;&gt;-->
+    <!--<bean id="jpaVendorAdapter"-->
+          <!--class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">-->
+        <!--<property name="database" value="MYSQL"/>-->
+        <!--<property name="showSql" value="true"/>-->
+        <!--<property name="generateDdl" value="false"/>-->
+        <!--<property name="databasePlatform"-->
+                  <!--value="org.hibernate.dialect.MySQL57Dialect"/>-->
+    <!--</bean>-->
 </beans>

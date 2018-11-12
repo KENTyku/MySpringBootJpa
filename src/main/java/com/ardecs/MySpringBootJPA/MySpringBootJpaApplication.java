@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import java.util.ArrayList;
 //@Controller
 //@SpringBootApplication
-//@ContextConfiguration(locations = {"classpath:META-INF/Config.xml"})//указываем конфиг для работы автокофигурации контекста в тесте
+//@ContextConfiguration(locations = {"classpath:META-INF/app-context.xml"})//указываем конфиг для работы автокофигурации контекста в тесте
 public class MySpringBootJpaApplication {
 //    @Autowired
 //    static private CountryRepository countryRepository;
