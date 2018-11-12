@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 
 @RunWith(SpringJUnit4ClassRunner.class)//специальный класс JUnit,требуется для поддержки контекста в JUnit
-@ContextConfiguration(locations = {"classpath:META-INF/app-context.xml"})//указываем конфиг для работы автокофигурации контекста в тесте
+@ContextConfiguration(locations = {"classpath:META-INF/test-context.xml"})//указываем конфиг для работы автокофигурации контекста в тесте
 public class MySpringBootJpaApplicationTests {
     @Autowired
     private CountryRepository countryRepository;

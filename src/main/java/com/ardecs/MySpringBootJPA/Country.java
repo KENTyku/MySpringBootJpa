@@ -7,10 +7,7 @@ package com.ardecs.MySpringBootJPA;/*
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 
@@ -20,6 +17,7 @@ import javax.validation.constraints.NotNull;
  */
 //@Component
 @Entity
+@Table(name = "country")
     @NamedQuery(name = "findAllProducts", query = "SELECT p FROM Country p")
 public class Country  {
 
@@ -27,6 +25,7 @@ public class Country  {
     @GeneratedValue
     private long id;
     @NotNull
+    @Column(name = "country_name")
     private String countryName;
 
     public Country() {
