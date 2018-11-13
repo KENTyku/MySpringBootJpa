@@ -13,7 +13,7 @@ import java.util.Optional;
  *
  * @author Yuri Tveritin, e-mail: kentyku@bk.ru
  */
-@Repository
+
 public interface CountryRepository extends CrudRepository<Country, Long> {
     Country findByCountryName(String name);
 //    Optional<Country> findById(Long id);

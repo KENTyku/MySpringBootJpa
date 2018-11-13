@@ -34,6 +34,11 @@ and open the template in the editor.
     <!--Спринг сканирует пакет на наличие репозиториев отмеченных аннотацией @Repository-->
     <jpa:repositories base-package="com.ardecs.MySpringBootJPA" transaction-manager-ref="txManager"/>
 
+
+
+    <!--<bean id="repository" class="com.ardecs.MySpringBootJPA.CountryRepository" abstract="true">-->
+    <!--</bean>-->
+
     <!--Настройка менеджера транзакций-->
     <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
